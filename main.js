@@ -207,4 +207,133 @@ Even: ${evenCount}
 Odd: ${oddCount}`
 );
 
+// task 4
+
+// let day = 1;
+
+// while (confirm("Want to see the next day?")) {
+//   switch (day) {
+//     case 1:
+//       alert("Monday");
+//       break;
+//     case 2:
+//       alert("Tuesday");
+//       break;
+//     case 3:
+//       alert("Wednesday");
+//       break;
+//     case 4:
+//       alert("Thursday");
+//       break;
+//     case 5:
+//       alert("Friday");
+//       break;
+//     case 6:
+//       alert("Saturday");
+//       break;
+//     case 7:
+//       alert("Sunday");
+//       break;
+//   }
+
+//   day++;
+
+//   if (day > 7) {
+//     day = 1;
+//   }
+// }
+
+// ====== II =========
+
+let days = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+let index = 0;
+
+while (confirm("Want to see the next day?")) {
+  alert(days[index]);
+  index = (index + 1) % 7;
+}
+
 // MAXIMUM
+
+//  TASK 1
+
+alert(
+  "Game “Guess the Number” Think of a number between 0 and 100, and I'll try to guess it"
+);
+
+let minNumber = 0;
+let maxNumber = 100;
+let guess;
+let answer;
+
+while (true) {
+  guess = Math.floor((minNumber + maxNumber) / 2);
+  answer = prompt(`Your number > ${guess}, < ${guess} or = ${guess}?`);
+
+  if (answer === "=") {
+    alert(`I guessed right! The number is ${guess}`);
+    break;
+  } else if (answer === ">") {
+    minNumber = guess + 1;
+  } else if (answer === "<") {
+    maxNumber = guess - 1;
+  } else {
+    alert("Please enter only >, <, or =");
+  }
+}
+
+//  TASK 2
+
+for (let i = 2; i <= 9; i++) {
+  console.log(`Multiplication table for  ${i}:`);
+  for (let j = 1; j <= 10; j++) {
+    console.log(`${i} × ${j} = ${i * j}`);
+  }
+  console.log("=========================");
+}
+
+//  TASK 3
+
+let inputDay = +prompt("Enter the day");
+let inputMonth = +prompt("Enter month");
+let inputYear = +prompt("Enter the year");
+
+function isLeapYear(y) {
+  return (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
+}
+
+let daysInMonth = [
+  31,
+  isLeapYear(inputYear) ? 29 : 28,
+  31,
+  30,
+  31,
+  30,
+  31,
+  31,
+  30,
+  31,
+  30,
+  31,
+];
+
+inputDay++;
+
+if (inputDay > daysInMonth[inputMonth - 1]) {
+  inputDay = 1;
+  inputMonth++;
+  if (inputMonth > 12) {
+    inputMonth = 1;
+    inputYear++;
+  }
+}
+
+alert(`Next date: ${inputDay}.${inputMonth}.${inputYear}`);
