@@ -53,4 +53,10 @@ body {
 .footer {
   background: linear-gradient(#4e5263, #0d2d41);
   padding: 28px 0;
+}
+
+.button {
+  margin: 10px 0;
+  padding: 14px 5px;
+  background-color: #14405b;
 }/*# sourceMappingURL=main.css.map */
